@@ -1,14 +1,19 @@
 const express = require('express');
 const app = express();
 
+const usersData = [];
+
 app.get('/', function(req, res) {
 
   res.send('Hello World!');
 
 });
 
-app.listen(3000, function() {
 
-  console.log('Example application, listening to port 3000!');
+app.get('/users', function(req, res){
+
+	res.send(usersData);
 
 });
+
+app.listen(3000, function(){console.log('Server is listening')})
